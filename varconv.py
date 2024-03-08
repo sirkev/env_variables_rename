@@ -15,8 +15,11 @@ while True:
         break
     lines.append(line)
 
-# Process each line and print the result with the "final String" prefix
+# Process each line and print the result with the "final String" prefix, excluding empty strings
 for line in lines:
-    converted_line = convert_to_camel_case(line)
-    print(f"final String {converted_line}")
+    if line.strip(): # Check if the line is not empty
+        converted_line = convert_to_camel_case(line)
+        print(f"final String {converted_line}")
+    else:
+        print() # Print an empty line if the input was empty
 
